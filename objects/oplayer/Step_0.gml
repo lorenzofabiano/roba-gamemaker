@@ -2,8 +2,8 @@
 //set keys
 
 //(check every frame if the key is held down)
-var key_left = keyboard_check(vk_left);
-var key_right = keyboard_check(vk_right);
+var key_left = keyboard_check(vk_left) || keyboard_check(ord("A"));
+var key_right = keyboard_check(vk_right) || keyboard_check(ord("D"));
 
 //check if on this frame the key has been pressed (not held)
 var key_jump = keyboard_check_pressed(vk_space);

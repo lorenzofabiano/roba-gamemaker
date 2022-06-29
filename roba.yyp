@@ -1,7 +1,11 @@
 {
   "resources": [
     {"id":{"name":"sPlayer_air","path":"sprites/sPlayer_air/sPlayer_air.yy",},"order":4,},
+    {"id":{"name":"oBullet","path":"objects/oBullet/oBullet.yy",},"order":5,},
+    {"id":{"name":"sGun","path":"sprites/sGun/sGun.yy",},"order":5,},
+    {"id":{"name":"oGun","path":"objects/oGun/oGun.yy",},"order":4,},
     {"id":{"name":"sPlayer_id","path":"sprites/sPlayer_id/sPlayer_id.yy",},"order":1,},
+    {"id":{"name":"sBullet","path":"sprites/sBullet/sBullet.yy",},"order":6,},
     {"id":{"name":"sStar","path":"sprites/sStar/sStar.yy",},"order":0,},
     {"id":{"name":"sWall","path":"sprites/sWall/sWall.yy",},"order":2,},
     {"id":{"name":"sPlayer_run","path":"sprites/sPlayer_run/sPlayer_run.yy",},"order":3,},
