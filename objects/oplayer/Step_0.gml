@@ -93,5 +93,3 @@ else {
 // Draw straight or reverse the object's current sprite when it's moving
 //	on the ground.
 if (hsp != 0) && (airborne = 0) image_xscale = sign(hsp);
-
-//test for git
