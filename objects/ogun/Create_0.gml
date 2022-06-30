@@ -1,1 +1,2 @@
-fire_delay = 0;
+firedelay = 0;
+recoil = 0;
