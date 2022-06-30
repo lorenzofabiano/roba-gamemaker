@@ -15,6 +15,8 @@ if (done == 0) {
 	if (place_meeting(x,y+vsp,oWall)){
 		
 		if (vsp > 0) {
+			//when it's fallen on the ground, set his sprite to the
+			//second frame.
 			done = 1;
 			image_index = 1;
 		}

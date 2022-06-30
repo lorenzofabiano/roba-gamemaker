@@ -14,17 +14,14 @@ airborne = 1
 
 //Collisions
 
-//if there's a collision with walls on the player's position
-// plus hsp value of pixels ahead, completely stop player's movement.
-//	But untill the player is not completely close to the wall, take his 
-//	 movement speed and cut it in half for every frame untill he's 
-//	 just moving at 0.1 pixels per frame, then stop the player's movement.
+
 if place_meeting(x+hsp,y,oWall){
 	
 	while (!place_meeting(x+sign(hsp),y,oWall)){		
 		 x += sign(hsp);
 	}
-	
+	//every time the enemy meets a wall, make it run in the
+	//opposite direction
 	hsp = -hsp;
 }
 

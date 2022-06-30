@@ -1,4 +1,2 @@
-/// @description this is an event that happens 
-//after all the instances have been drawn
-
+//when colliding with a wall, disappear.
 if (place_meeting(x,y,oWall)) instance_destroy();

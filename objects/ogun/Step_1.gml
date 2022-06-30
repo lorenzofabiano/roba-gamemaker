@@ -4,10 +4,14 @@
 x = oPlayer.x;
 y = oPlayer.y+2;
 
-//draw the object angle based on its starting position and the mouse coordinates
+//check if gamepad is enabled and used. If not, 
+//draw the object angle based on its starting position 
+//and mouse coordinates.
 if (oPlayer.controller == 0) {	
 	image_angle = point_direction(x,y,mouse_x,mouse_y);
 }
+//Otherwise, get the right analog x and y coordinates and
+//turn them into an angle value to apply to the gun sprite.
 else {
 	var controllerh = gamepad_axis_value(0,gp_axisrh);
 	var controllerv = gamepad_axis_value(0,gp_axisrv);
@@ -20,22 +24,37 @@ else {
 }	
 
 
-
+//Store the maximum value between 0 and "recoil - 1" (this will decrease
+//the recoil value every frame but won't let it slide below 0)
 recoil = max(0,recoil - 1);
 
+//if pressing LMB or RT on xinput gamepad will shoot. Decrease the firedelay
+//value every time the check is made.
 if ((mouse_check_button(mb_left) || gamepad_button_check(0,gp_shoulderrb))) && (firedelay-- < 0) {
+	//the higher, the more the gun moves backwards.
 	recoil = 4;
+	//the higher, the lower is the fire ratio
 	firedelay = 5;
+	//create the bullet in the Bullet's room layer and apply the following
+	//values to it's instance
 	with (instance_create_layer(x,y,"Bullet",oBullet)) {
+		//number of pixels traveling per frame
 		speed = 25;
+		//the direction to which the bullets moves. Other refers to 
+		//the object that referenced this instance, therefore oGun.
 		direction = other.image_angle + random_range(-3, 3);
+		//the angle to draw the bullet's sprite at
 		image_angle = direction;
 	}
 }
 
+//get the coordinates where the gun would recoil if shooting in any
+//direction
 x = x - lengthdir_x(recoil,image_angle);
 y = y - lengthdir_y(recoil,image_angle);
 
+//when the gun is pointed in the right half of the screen, draw it straight
+//when not, flip it vertically
 if (image_angle > 90) && (image_angle < 270) {
 	image_yscale = -1
 } else image_yscale = 1;
