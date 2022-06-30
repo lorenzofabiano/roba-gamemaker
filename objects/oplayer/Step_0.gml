@@ -8,6 +8,23 @@ var key_right = keyboard_check(vk_right) || keyboard_check(ord("D"));
 //check if on this frame the key has been pressed (not held)
 var key_jump = keyboard_check_pressed(vk_space);
 
+
+//Gamepad implementation
+if (key_left) || (key_right) || (key_jump) {
+	controller = 0;
+}
+
+if (abs(gamepad_axis_value(0,gp_axislh)) > 0.2) {
+	key_left = abs(min(gamepad_axis_value(0,gp_axislh),0));
+	key_right = max(gamepad_axis_value(0,gp_axislh),0);
+	controller = 1;
+}
+
+if (gamepad_button_check_pressed(0,gp_face1)) {
+	key_jump = 1;
+	controller = 1;
+}
+
 //calculate movement and direction (either returns -1 to move left, 
 // 0 to stand still or +1 to move right and multiplies it with the 
 //  walkspeed value)  
