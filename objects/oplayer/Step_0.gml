@@ -1,52 +1,66 @@
 /// @description movement engine
 
+if (hascontrol) {
+	//set keys
 
-//set keys
+	//(check every frame if the key is held down)
+	var key_left = keyboard_check(vk_left) || keyboard_check(ord("A"));
+	var key_right = keyboard_check(vk_right) || keyboard_check(ord("D"));
 
-//(check every frame if the key is held down)
-var key_left = keyboard_check(vk_left) || keyboard_check(ord("A"));
-var key_right = keyboard_check(vk_right) || keyboard_check(ord("D"));
-
-//check if on this frame the key has been pressed (not held)
-var key_jump = keyboard_check_pressed(vk_space);
+	//check if on this frame the key has been pressed (not held)
+	var key_jump = keyboard_check_pressed(vk_space);
 
 
-//Gamepad implementation
-//if a keyboard key is pressed, switch to keyboard controls
-if (key_left) || (key_right) || (key_jump) {
-	controller = 0;
-}
+	//Gamepad implementation
+	//if a keyboard key is pressed, switch to keyboard controls
 
-//if a gamepad button is pressed or if
-//analogs are moved, switch to gamepad controls
+	if (key_left) || (key_right) || (key_jump) {
+		controller = 0;
+	}
 
-//get the absolute value of the left analog position and if it's higher
-//than 0.2, enable gamepad controls
-if (abs(gamepad_axis_value(0,gp_axislh)) > 0.2) {
-	//this system allows to get the analog values of key_left or key_right (0 to 1)
-	//so, for example, when moving right for any amount of analog space,
-	// the key_right value increases while the key_left remains 0 and viceversa.
-	//The value is then multiplied by whe walkspeed and tadaaa, habemus
-	//analog controls.
+	//if a gamepad button is pressed or if
+	//analogs are moved, switch to gamepad controls
+
+	//get the absolute value of the left analog position and if it's higher
+	//than 0.2, enable gamepad controls
+	if (abs(gamepad_axis_value(0,gp_axislh)) > 0.2) {
+		//this system allows to get the analog values of key_left or key_right (0 to 1)
+		//so, for example, when moving right for any amount of analog space,
+		// the key_right value increases while the key_left remains 0 and viceversa.
+		//The value is then multiplied by whe walkspeed and tadaaa, habemus
+		//analog controls.
 	
-	//when moving the left analog towards the left relatively
-	//to the neutral position, get the absolute value of the minimum
-	//value between the analog placement and the neutral position. 
-	//It can return between 0 and 1.
-	key_left = abs(min(gamepad_axis_value(0,gp_axislh),0));
+		//when moving the left analog towards the left relatively
+		//to the neutral position, get the absolute value of the minimum
+		//value between the analog placement and the neutral position. 
+		//It can return between 0 and 1.
+		key_left = abs(min(gamepad_axis_value(0,gp_axislh),0));
 	
-	//when moving the left analog towards the right relatively
-	//to the neutral position, get the maximum
-	//value between the analog placement and the neutral position. 
-	//It can return between 0 and 1.
-	key_right = max(gamepad_axis_value(0,gp_axislh),0);
-	controller = 1;
-}
+		//when moving the left analog towards the right relatively
+		//to the neutral position, get the maximum
+		//value between the analog placement and the neutral position. 
+		//It can return between 0 and 1.
+		key_right = max(gamepad_axis_value(0,gp_axislh),0);
+		controller = 1;
+	}
 
-//gp_face1 is the A button, if you're wondering
-if (gamepad_button_check_pressed(0,gp_face1)) {
-	key_jump = 1;
-	controller = 1;
+	//gp_face1 is the A button, if you're wondering
+	if (gamepad_button_check_pressed(0,gp_face1)) {
+		key_jump = 1;
+		controller = 1;
+	}
+
+
+	//jumping
+	if (canJump-- > 0) && (key_jump = 1 ) {
+		vsp = vspJump;
+		canJump = 0;
+	}
+}
+else {	
+	key_left = 0;
+	key_right = 0;
+	key_jump = 0;
 }
 
 //calculate movement and direction (either returns -1 to move left, 
@@ -60,12 +74,6 @@ vsp = vsp + grv;
 //for every frame in which there's no vertical collision, assume that 
 // the player is airborne
 airborne = 1
-
-//jumping
-if (canJump-- > 0) && (key_jump = 1 ) {
-	vsp = vspJump;
-	canJump = 0;
-}
 
 //calculate collisions
 
@@ -134,4 +142,3 @@ else {
 // Draw straight or reverse the object's current sprite when it's moving
 //	on the ground.
 if (hsp != 0) && (airborne = 0) image_xscale = sign(hsp);
-
