@@ -19,6 +19,7 @@ if (done == 0) {
 			//second frame.
 			done = 1;
 			image_index = 1;
+			ScreenShake(1.5,15);
 		}
 		
 		while (abs(vsp) > 0.1) {
@@ -31,5 +32,5 @@ if (done == 0) {
 	}
 
 	y += vsp;
-
 }
+

@@ -42,7 +42,7 @@ if ((mouse_check_button(mb_left) || gamepad_button_check(0,gp_shoulderrb))) && (
 		speed = 25;
 		//the direction to which the bullets moves. Other refers to 
 		//the object that referenced this instance, therefore oGun.
-		direction = other.image_angle + random_range(-3, 3);
+		direction = other.image_angle + random_range(-2, 2);
 		//the angle to draw the bullet's sprite at
 		image_angle = direction;
 	}
