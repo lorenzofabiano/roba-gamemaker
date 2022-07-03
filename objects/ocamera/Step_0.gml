@@ -4,6 +4,10 @@
 if (instance_exists(follow)) {
 	xTo = follow.x;
 	yTo = follow.y;
+		if (follow == oPlayer_dead) {
+			x = xTo;
+			y = yTo;
+		}
 }
 
 //Update object position
