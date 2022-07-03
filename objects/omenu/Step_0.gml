@@ -6,16 +6,19 @@ if (menu_control) {
 	if (keyboard_check_pressed(vk_up)) {
 		menu_cursor++;
 		if (menu_cursor >= menu_items) menu_cursor = 0;
+		audio_play_sound(snMenuBip,10,false);
 	}
 	if (keyboard_check_pressed(vk_down)) {
 		menu_cursor--;
 		if (menu_cursor < 0) menu_cursor = menu_items-1;
+		audio_play_sound(snMenuBip,10,false);
 	}
 	if (keyboard_check_pressed(vk_enter)) {
 		menu_x_target = gui_width+200;
 		menu_committed = menu_cursor;
 		ScreenShake(2,30);
 		menu_control = false;
+		audio_play_sound(snDeath,10,false);
 	}
 }
 if (menu_x > gui_width+150) && (menu_committed != -1) {

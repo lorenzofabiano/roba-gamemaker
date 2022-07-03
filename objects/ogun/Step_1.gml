@@ -37,6 +37,8 @@ if ((mouse_check_button(mb_left) || gamepad_button_check(0,gp_shoulderrb))) && (
 	firedelay = 5;
 	//create the bullet in the Bullet's room layer and apply the following
 	//values to it's instance
+	audio_sound_pitch(snShoot,choose(0.95,1,1.05));
+	audio_play_sound(snShoot,5,false);
 	with (instance_create_layer(x,y,"Bullet",oBullet)) {
 		//number of pixels traveling per frame
 		speed = 25;

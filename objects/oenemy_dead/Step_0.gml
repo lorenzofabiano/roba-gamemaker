@@ -20,6 +20,7 @@ if (done == 0) {
 			done = 1;
 			image_index = 1;
 			ScreenShake(1.5,15);
+			audio_play_sound(snEnemyFallen,15,false);
 		}
 		
 		while (abs(vsp) > 0.1) {

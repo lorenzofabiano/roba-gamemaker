@@ -55,6 +55,7 @@ if (hascontrol) {
 	if (canJump-- > 0) && (key_jump = 1 ) {
 		vsp = vspJump;
 		canJump = 0;
+		audio_play_sound(snJump,1,false);
 	}
 }
 else {	
@@ -124,6 +125,10 @@ if (!place_meeting(x,y+1,oWall)) {
  }
 // if there's a collision below the player and therefore he's on the ground,
 else {
+	if (sprite_index == sPlayer_air) {
+		audio_sound_pitch(snLanding,random_range(0.7,1.3));
+		audio_play_sound(snLanding,4,false);
+	}
 	// start animating
 	 image_speed = 1;
 	 
