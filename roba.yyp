@@ -1,5 +1,6 @@
 {
   "resources": [
+    {"id":{"name":"oSign","path":"objects/oSign/oSign.yy",},"order":14,},
     {"id":{"name":"fDefault","path":"fonts/fDefault/fDefault.yy",},"order":1,},
     {"id":{"name":"sPlayer_air","path":"sprites/sPlayer_air/sPlayer_air.yy",},"order":4,},
     {"id":{"name":"oLevelEnd","path":"objects/oLevelEnd/oLevelEnd.yy",},"order":10,},
@@ -28,12 +29,15 @@
     {"id":{"name":"oPlayer_dead","path":"objects/oPlayer_dead/oPlayer_dead.yy",},"order":12,},
     {"id":{"name":"snStep2","path":"sounds/snStep2/snStep2.yy",},"order":3,},
     {"id":{"name":"sEnemy_id","path":"sprites/sEnemy_id/sEnemy_id.yy",},"order":8,},
+    {"id":{"name":"oText","path":"objects/oText/oText.yy",},"order":13,},
     {"id":{"name":"sWall","path":"sprites/sWall/sWall.yy",},"order":2,},
+    {"id":{"name":"DrawSetText","path":"scripts/DrawSetText/DrawSetText.yy",},"order":2,},
     {"id":{"name":"snShoot","path":"sounds/snShoot/snShoot.yy",},"order":0,},
     {"id":{"name":"sPlayer_run","path":"sprites/sPlayer_run/sPlayer_run.yy",},"order":3,},
     {"id":{"name":"sBGback","path":"sprites/sBGback/sBGback.yy",},"order":17,},
     {"id":{"name":"oEnemy_dead","path":"objects/oEnemy_dead/oEnemy_dead.yy",},"order":7,},
     {"id":{"name":"sEnemy_air","path":"sprites/sEnemy_air/sEnemy_air.yy",},"order":7,},
+    {"id":{"name":"sCartello","path":"sprites/sCartello/sCartello.yy",},"order":21,},
     {"id":{"name":"snJump","path":"sounds/snJump/snJump.yy",},"order":7,},
     {"id":{"name":"snLanding","path":"sounds/snLanding/snLanding.yy",},"order":1,},
     {"id":{"name":"SlideTransition","path":"scripts/SlideTransition/SlideTransition.yy",},"order":0,},
@@ -52,6 +56,7 @@
     {"id":{"name":"oPrintVariable","path":"objects/oPrintVariable/oPrintVariable.yy",},"order":3,},
     {"id":{"name":"oCamera","path":"objects/oCamera/oCamera.yy",},"order":8,},
     {"id":{"name":"snStep4","path":"sounds/snStep4/snStep4.yy",},"order":5,},
+    {"id":{"name":"sArrowBox","path":"sprites/sArrowBox/sArrowBox.yy",},"order":20,},
     {"id":{"name":"rRoom1","path":"rooms/rRoom1/rRoom1.yy",},"order":0,},
   ],
   "Options": [
