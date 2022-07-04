@@ -10,6 +10,7 @@
     {"id":{"name":"sBGfront","path":"sprites/sBGfront/sBGfront.yy",},"order":16,},
     {"id":{"name":"snStep1","path":"sounds/snStep1/snStep1.yy",},"order":2,},
     {"id":{"name":"sChris","path":"sprites/sChris/sChris.yy",},"order":13,},
+    {"id":{"name":"sTitle","path":"sprites/sTitle/sTitle.yy",},"order":22,},
     {"id":{"name":"oGun","path":"objects/oGun/oGun.yy",},"order":4,},
     {"id":{"name":"sPlayer_id","path":"sprites/sPlayer_id/sPlayer_id.yy",},"order":1,},
     {"id":{"name":"sBG1","path":"sprites/sBG1/sBG1.yy",},"order":15,},
