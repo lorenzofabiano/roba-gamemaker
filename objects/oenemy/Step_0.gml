@@ -1,7 +1,9 @@
 /// @description movement engine
 //set keys
 
-
+if (grounded) && (afraidofheights) && (!place_meeting(x+hsp,y+1,oWall)) {
+	hsp = -hsp;
+}
 //every frame increase the vertical speed by 0.2 (grv value)
 vsp = vsp + grv;
 
@@ -42,6 +44,8 @@ y += vsp;
 
 // if there's no collision below the player and therefore he's airborne,
 if (!place_meeting(x,y+1,oWall)) {
+	
+	grounded = false
 	// draw his airborne sprite
 	sprite_index = sEnemy_air;
 	// don't animate it
@@ -53,6 +57,8 @@ if (!place_meeting(x,y+1,oWall)) {
  }
 // if there's a collision below the player and therefore he's on the ground,
 else {
+	 grounded = true
+	
 	// start animating
 	 image_speed = 1;
 	 
