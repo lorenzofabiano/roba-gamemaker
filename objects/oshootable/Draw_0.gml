@@ -1,5 +1,4 @@
-//description @ If this event is absent, the next line is implicit.
-//draw the sprite
+/// @description 
 draw_self();
 
 //when the entity gets shot, the flash value rises to 3 (oBullet)

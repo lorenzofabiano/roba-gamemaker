@@ -1,6 +1,7 @@
 {
   "resources": [
     {"id":{"name":"oSign","path":"objects/oSign/oSign.yy",},"order":14,},
+    {"id":{"name":"oShootable","path":"objects/oShootable/oShootable.yy",},"order":17,},
     {"id":{"name":"fDefault","path":"fonts/fDefault/fDefault.yy",},"order":1,},
     {"id":{"name":"sPlayer_air","path":"sprites/sPlayer_air/sPlayer_air.yy",},"order":4,},
     {"id":{"name":"oLevelEnd","path":"objects/oLevelEnd/oLevelEnd.yy",},"order":10,},
@@ -22,9 +23,11 @@
     {"id":{"name":"fMenu","path":"fonts/fMenu/fMenu.yy",},"order":0,},
     {"id":{"name":"sPLayer_dead","path":"sprites/sPLayer_dead/sPLayer_dead.yy",},"order":19,},
     {"id":{"name":"tTiles","path":"tilesets/tTiles/tTiles.yy",},"order":0,},
+    {"id":{"name":"sCrate","path":"sprites/sCrate/sCrate.yy",},"order":23,},
     {"id":{"name":"sStar","path":"sprites/sStar/sStar.yy",},"order":0,},
     {"id":{"name":"sMenuGround","path":"sprites/sMenuGround/sMenuGround.yy",},"order":18,},
     {"id":{"name":"oGunPickup","path":"objects/oGunPickup/oGunPickup.yy",},"order":15,},
+    {"id":{"name":"oCrata","path":"objects/oCrata/oCrata.yy",},"order":16,},
     {"id":{"name":"shWhite","path":"shaders/shWhite/shWhite.yy",},"order":0,},
     {"id":{"name":"oMenu","path":"objects/oMenu/oMenu.yy",},"order":11,},
     {"id":{"name":"sKastro","path":"sprites/sKastro/sKastro.yy",},"order":14,},
