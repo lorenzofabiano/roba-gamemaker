@@ -128,6 +128,11 @@ else {
 	if (sprite_index == sPlayer_air) {
 		audio_sound_pitch(snLanding,random_range(0.7,1.3));
 		audio_play_sound(snLanding,4,false);
+		repeat(5) {
+			with (instance_create_layer(x,bbox_bottom,"Bullet",oDust)) {
+				vsp = 0;
+			}
+		}
 	}
 	// start animating
 	 image_speed = 1;

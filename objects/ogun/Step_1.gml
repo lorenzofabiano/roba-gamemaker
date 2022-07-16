@@ -41,7 +41,7 @@ if ((mouse_check_button(mb_left) || gamepad_button_check(0,gp_shoulderrb))) && (
 	audio_play_sound(snShoot,5,false);
 	with (instance_create_layer(x,y,"Bullet",oBullet)) {
 		//number of pixels traveling per frame
-		speed = 25;
+		spd = 25;
 		//the direction to which the bullets moves. Other refers to 
 		//the object that referenced this instance, therefore oGun.
 		direction = other.image_angle + random_range(-2, 2);
