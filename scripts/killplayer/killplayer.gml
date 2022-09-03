@@ -10,6 +10,10 @@ function KillPlayer(){
 	vsp = lengthdir_y(4,direction)-2;
 
 	if (sign(hsp) != 0) image_xscale = sign(hsp); 
-
+	
+	with (oGame) {
+		global.kills = 0;
+		global.killsthisroom = 0;
+	}
 
 }
