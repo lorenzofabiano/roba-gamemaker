@@ -66,7 +66,7 @@
     {"id":{"name":"rRoom3","path":"rooms/rRoom3/rRoom3.yy",},"order":3,},
     {"id":{"name":"oWall","path":"objects/oWall/oWall.yy",},"order":2,},
     {"id":{"name":"oStar","path":"objects/oStar/oStar.yy",},"order":0,},
-    {"id":{"name":"oPrintVariable","path":"objects/oPrintVariable/oPrintVariable.yy",},"order":3,},
+    {"id":{"name":"oGame","path":"objects/oGame/oGame.yy",},"order":3,},
     {"id":{"name":"oCamera","path":"objects/oCamera/oCamera.yy",},"order":8,},
     {"id":{"name":"snStep4","path":"sounds/snStep4/snStep4.yy",},"order":5,},
     {"id":{"name":"oEGun","path":"objects/oEGun/oEGun.yy",},"order":20,},
