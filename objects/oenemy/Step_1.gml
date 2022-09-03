@@ -13,4 +13,6 @@ if (hp <= 0) {
 	}
 	//
 	instance_destroy();
+	with (mygun) instance_destroy();
 }
+
