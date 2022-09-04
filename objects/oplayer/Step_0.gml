@@ -66,11 +66,14 @@ else {
 
 //calculate movement and direction (either returns -1 to move left, 
 // 0 to stand still or +1 to move right and multiplies it with the 
-//  walkspeed value)  
-hsp = (key_right - key_left) * walksp;
+//  walkspeed value)
+var move = key_right - key_left;
+hsp = (move * walksp) + gunkickx;
+gunkickx = 0;
 
 //every frame increase the vertical speed by 0.2 (grv value)
-vsp = vsp + grv;
+vsp = (vsp + grv) + gunkicky;
+gunkicky = 0;
 
 //for every frame in which there's no vertical collision, assume that 
 // the player is airborne
@@ -111,6 +114,8 @@ if (place_meeting(x,y+vsp,oWall)){
 y += vsp;
 
 //Animation
+var aimside = sign(mouse_x - x);
+if (aimside !=0) image_xscale = aimside;
 
 // if there's no collision below the player and therefore he's airborne,
 if (!place_meeting(x,y+1,oWall)) {
@@ -141,14 +146,14 @@ else {
 	 if (hsp == 0) {
 		 sprite_index = sPlayer_id;
 	 }
-	 
 	 //if the player is moving, use the run sprite animation
 	 else {
 		 sprite_index = sPlayer_run;
+		 if (aimside != sign(hsp)) sprite_index = sPlayer_runback;
 	 }
 }
 
 //Draw the player sprite according to the direction he's moving.
 // Draw straight or reverse the object's current sprite when it's moving
 //	on the ground.
-if (hsp != 0) && (airborne = 0) image_xscale = sign(hsp);
+//if (hsp != 0) image_xscale = sign(hsp);

@@ -48,6 +48,10 @@ if ((mouse_check_button(mb_left) || gamepad_button_check(0,gp_shoulderrb))) && (
 		//the angle to draw the bullet's sprite at
 		image_angle = direction;
 	}
+	with (oPlayer) {
+		gunkickx = lengthdir_x(1.5,other.image_angle-180);
+		gunkicky = lengthdir_y(1,other.image_angle-180);
+	}
 }
 
 //get the coordinates where the gun would recoil if shooting in any
