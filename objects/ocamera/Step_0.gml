@@ -28,10 +28,11 @@ shake_remain = max(0,shake_remain-((1/shake_length)*shake_magnitude));
 //Update actual camera position
 camera_set_view_pos(cam,x-view_w_half,y-view_h_half);
 
-if (layer_exists("SavanaBack")) {
-	layer_x("SavanaBack",x/2);	
+//parallax effect
+if (layer_exists("Background")) {
+	layer_x("Background",x/2);	
 }
 
-if (layer_exists("SavanaFront")) {
-	layer_x("SavanaFront",x/5);	
+if (layer_exists("Background")) {
+	layer_x("Background",x/5);	
 }
